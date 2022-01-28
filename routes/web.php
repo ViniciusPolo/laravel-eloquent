@@ -36,7 +36,7 @@ Route::get('/clients/search/{text}', [ClientController::class, 'busca']);
 
 Route::get('/clients/bills/{id}', [BillController::class, 'contas']);
 
-Route::get('/clients/expensive/{value}', [BillController::class, 'caras']);
+Route::get('/bills/expensive/{value}', [BillController::class, 'caras']);
 
 Route::get('/bills/between/{value1}/{value2}', [BillController::class, 'between']);
 
