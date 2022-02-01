@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreClientRequest;
-use App\Http\Requests\UpdateClientRequest;
 use App\Models\Client;
 use Facade\FlareClient\View;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreClientRequest;
+use App\Http\Requests\UpdateClientRequest;
 
 class ClientController extends Controller
 {
@@ -108,5 +109,6 @@ class ClientController extends Controller
     {
         $client = Client::orderBy('name','asc')->get();
         return response()->json($client);
+        //return json($client=>"name");
     }
 }

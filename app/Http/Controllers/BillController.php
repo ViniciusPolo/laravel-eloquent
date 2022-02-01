@@ -44,6 +44,7 @@ class BillController extends Controller
             'payment_date'=>$request->payment_date,
             'invoice'=>$request->invoice            
         ]);
+        
 
         return response()->json($bill);
     }
@@ -109,4 +110,5 @@ class BillController extends Controller
         $client = Bill::where('value','>',$value1)->where('value','<',$value2)->get();
         return response()->json($client);
     }
+    
 }

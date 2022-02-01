@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Client;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreBillRequest extends FormRequest
@@ -22,9 +24,18 @@ class StoreBillRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
-        return [
-            //
-        ];
-    }
+    {   
+        return[
+                'invoice'=>'required',
+                'client_id'=>Client::where('name','not in','%Guest%')->get('id')
+    
+            ];
+        }
+        public function messages()
+        {
+            return [
+                'invoice.required'=>'Uma fatura é obrigatória.'
+            ];
+        }
 }
+
