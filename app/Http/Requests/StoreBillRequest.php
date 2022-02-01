@@ -25,9 +25,10 @@ class StoreBillRequest extends FormRequest
      */
     public function rules()
     {   
+        $nome = Client::where('name','not in','%Guest%')->get('id');
         return[
                 'invoice'=>'required',
-                'client_id'=>Client::where('name','not in','%Guest%')->get('id')
+                'client_id'=>$nome.'required'
     
             ];
         }
