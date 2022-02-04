@@ -57,7 +57,7 @@ class ClientController extends Controller
      */
     public function info($id)
     {   
-        $client = Client::where('id','=',$id)->first();
+        $client = Client::where('id_number','=',$id)->first();
         return response()->json($client);
     }
 
