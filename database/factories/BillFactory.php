@@ -14,12 +14,12 @@ class BillFactory extends Factory
     public function definition()
     {
         return [
-            'invoice' => $this->faker->randomNumber(4),
-            'installment' => $this->faker-> randomNumber(1),
+            'invoice' => $this->faker->randomNumber(),
+            'installment' => $this->faker-> randomNumber(),
             'client_id' => $this->faker-> uuid3(),
             'value' => $this->faker->randomFloat(),
             'due_date' => $this->faker-> date(),
-            'payment_date' => $this->faker-> date(),
+            'payment_date' => $this->faker-> date()
 
         ];
     }
