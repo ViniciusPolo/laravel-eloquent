@@ -17,9 +17,9 @@ class BillFactory extends Factory
             'invoice' => $this->faker->randomNumber(4),
             'installment' => $this->faker-> randomNumber(1),
             'client_id' => $this->faker-> uuid3(),
-            'value' => $this->faker->randomFloat(3),
-            'due_date' => $this->faker-> dateTime(),
-            'payment_date' => $this->faker-> dateTime(),
+            'value' => $this->faker->randomFloat(),
+            'due_date' => $this->faker-> date(),
+            'payment_date' => $this->faker-> date(),
 
         ];
     }
