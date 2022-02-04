@@ -18,7 +18,8 @@ class ClientFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
-            'id_number' => Client::factory()->create()->id
+            'id_number' => $this->faker->uuid3()
+
         ];
     }
 }
