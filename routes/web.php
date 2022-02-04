@@ -28,7 +28,7 @@ Route::post('/clients/store',[ClientController::class, 'store']);
 
 Route::post('/bills/store',[BillController::class, 'store']);
 
-Route::get('/clients/show/{client}', [ClientController::class, 'show']);
+Route::get('/clients/show/{client}', [ClientController::class, 'info']);
 
 Route::get('/clients/name/{name}', [ClientController::class, 'name']);
 
